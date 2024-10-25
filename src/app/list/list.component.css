@@ -1,0 +1,19 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 350px;
+    height: 400px;
+}
+
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.inputContainer {
+    display: flex;
+    margin-top: auto;
+}

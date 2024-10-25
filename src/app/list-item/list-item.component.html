@@ -1,0 +1,5 @@
+<div>
+    <input type="checkbox" (change)="toggle.emit(task?.id)">
+    <span>{{ task?.taskName }}</span>
+    <button (click)="delete.emit(task?.id)">Delete</button>
+</div>
