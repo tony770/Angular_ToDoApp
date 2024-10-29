@@ -2,18 +2,40 @@
     display: flex;
     flex-direction: column;
     border: 2px solid black;
+    border-radius: 10px;
     width: 350px;
     height: 400px;
+    align-items: center;
+}
+
+.listName {
+    font-size: 30px;
+    margin: 25px;
 }
 
 .taskContainer {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
-    scrollbar-width: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 280px;
+    width: 280px;
+    box-sizing: border-box;
 }
 
 .inputContainer {
     display: flex;
     margin-top: auto;
+    margin-bottom: 10px;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    width: 100%;
+}
+

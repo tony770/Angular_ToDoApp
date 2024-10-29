@@ -9,7 +9,7 @@ import { Task } from '../task';
   styleUrl: './list-item.component.css'
 })
 export class ListItemComponent {
-  @Input() task?: Task;
+  @Input() task!: Task;
   @Output() delete = new EventEmitter<number>();
   @Output() toggle = new EventEmitter<number>();
 }

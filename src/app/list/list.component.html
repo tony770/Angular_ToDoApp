@@ -1,6 +1,6 @@
 @if(list) {
     <div class="list">
-        <h2>{{ list.name }}</h2>
+        <h2 class="listName">{{ list.name }}</h2>
         <div class="taskContainer">
             <ul>
                 @for (task of list.tasks; track task.id) {
