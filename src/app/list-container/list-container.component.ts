@@ -12,35 +12,39 @@ import { ListComponent } from '../list/list.component';
 export class ListContainerComponent {
   lists: ToDoList[] = [];
   testList: ToDoList = {
-    id: 0,
+    id: 'test',
     name: 'test',
     tasks: [
       {
         id: 1,
         taskName: 'egg',
-        completed: false
+        completed: false,
+        starred: false
       },
       {
         id: 2,
         taskName: 'milk',
-        completed: false
+        completed: false,
+        starred: false
       },
       {
         id: 3,
         taskName: 'bread',
-        completed: false
+        completed: false,
+        starred: false
       },
       {
         id: 4,
         taskName: 'go to the pharmacy and print out paper',
-        completed: false
+        completed: false,
+        starred: false
       }
     ]
   };
 
   addNewList(name: string) {
     const newList: ToDoList = {
-      id: Math.random(),
+      id: name,
       name: name,
       tasks: []
     }
