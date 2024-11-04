@@ -5,14 +5,14 @@
             <ul>
                 @for (task of list.tasks; track task.id) {
                     <li>
-                        <app-list-item [task]="task" (delete)="deleteTask(task.id)" (toggle)="toggleTaskCompletion(task.id)"></app-list-item>
+                        <app-list-item [task]="task"></app-list-item>
                     </li>
                 }
             </ul>
         </div>
         <div class="inputContainer">
             <input #taskInput type="text" placeholder="New Task">
-            <button (click)="addTask(taskInput.value)">Add Task</button>
+            <button>Add Task</button>
         </div>
     </div>
 }

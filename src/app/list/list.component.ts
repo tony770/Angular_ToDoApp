@@ -12,22 +12,5 @@ import { ToDoList } from '../list';
 })
 export class ListComponent {
   @Input() list: ToDoList = {} as ToDoList;
-
-  addTask(taskName: string) {
-    const newTask: Task = {
-      id: Math.random(),
-      taskName,
-      completed: false
-    }
-    this.list.tasks.push(newTask);
-  }
-
-  deleteTask(id: number) {
-    this.list.tasks = this.list.tasks.filter(task => task.id !== id);
-  }
-
-  toggleTaskCompletion(id: number) {
-    const task = this.list.tasks.find(task => task.id === id);
-    if(task) task.completed = !task.completed;
-  }
+  
 }
