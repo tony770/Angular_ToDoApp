@@ -29,4 +29,8 @@ export class ListComponent {
     this.todoService.deleteTask(listName, taskId);
   }
 
+  toggleStarred(listName: string): void {
+    this.todoService.toggleStarred(listName);
+    console.log(`list ${listName} starred`);
+  }
 }
