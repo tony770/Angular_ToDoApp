@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div class="listContainer">
+    @for (list of lists; track list.name) {
+        <app-list [list]="list" (delete)="deleteList(list.name)"></app-list>
+    }
+</div>
+
+<input #id type="text" placeholder="Enter list folder">
+<input #name type="text" placeholder="Enter list name">
+<button (click)="addList(id.value, name.value)">Add List</button>

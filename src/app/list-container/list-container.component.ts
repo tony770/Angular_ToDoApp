@@ -25,6 +25,9 @@ export class ListContainerComponent implements OnInit {
   }
 
   getList(): void {
-
+    const listId = String(this.route.snapshot.paramMap.get('folderId'))
+    this.lists = this.todoService.getAllListsById(listId);
   }
+
+  
 }
