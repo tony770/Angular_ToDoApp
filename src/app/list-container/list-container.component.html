@@ -1,8 +1,9 @@
 <div class="listContainer">
-    @for (list of lists; track list.id) {
-        <app-list [list]="list"></app-list>
+    @for (list of lists; track list.name) {
+        <app-list [list]="list" (delete)="deleteList(list.name)"></app-list>
     }
 </div>
 
-<input #input type="text" placeholder="Enter list name">
-<button >Add List</button>`
+<input #id type="text" placeholder="Enter list folder">
+<input #name type="text" placeholder="Enter list name">
+<button (click)="addList(id.value, name.value)">Add List</button>

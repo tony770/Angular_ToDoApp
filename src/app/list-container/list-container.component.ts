@@ -19,15 +19,29 @@ export class ListContainerComponent implements OnInit {
   ) {}
 
   lists: ToDoList[] = [];
+  folderId: string | null = null;
 
   ngOnInit(): void {
-      this.getList();
+      this.route.paramMap.subscribe(params => {
+        this.folderId = params.get('folderId');
+        this.getList();
+      })
   }
 
   getList(): void {
-    const listId = String(this.route.snapshot.paramMap.get('folderId'))
-    this.lists = this.todoService.getAllListsById(listId);
+    this.lists = [];
+    if(this.folderId) {
+      this.lists = this.todoService.getAllListsById(this.folderId);
+    }
+    
   }
 
-  
+  addList(listId: string, ListName: string): void {
+    this.todoService.addList(listId, ListName);
+  }
+
+  deleteList(listName: string): void {
+    this.todoService.deleteList(listName);
+    this.getList();
+  }
 }
