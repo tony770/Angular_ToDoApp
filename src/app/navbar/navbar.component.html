@@ -1,9 +1,10 @@
 <div>
-    <nav>
-        <a routerLink="/home" >All list</a>
-        <a routerLink="/folder/personal" routerLinkActive="'active">Personal</a>
-        <a routerLink="/folder/work" routerLinkActive="'active">Work</a>
+    <nav #navbar>
+        <a routerLink="/home" routerLinkActive="active">All list</a>
+        <a routerLink="/folder/personal" routerLinkActive="active">Personal</a>
+        <a routerLink="/folder/work" routerLinkActive="active">Work</a>
     </nav>
-    <button>+</button>
+    <input #title type="text">
+    <button (click)="addFolder(title.value)">+</button>
 </div>
 

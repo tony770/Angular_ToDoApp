@@ -38,6 +38,7 @@ export class ListContainerComponent implements OnInit {
 
   addList(listId: string, ListName: string): void {
     this.todoService.addList(listId, ListName);
+    this.getList();
   }
 
   deleteList(listName: string): void {

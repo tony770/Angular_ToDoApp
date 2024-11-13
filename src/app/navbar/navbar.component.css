@@ -1,13 +1,16 @@
 div {
     width: 50%;
     margin: 0 auto;
-
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 nav {
     border: 2px solid black;
     display: flex;
     justify-content: space-evenly;
+    width: 100%;
     font-size: 30px;
     border-radius: 10px;
     height: 60px;
@@ -21,8 +24,16 @@ nav a {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 nav a:last-child {
     border-right: none;
+}
+
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    cursor: pointer;
 }
