@@ -4,7 +4,12 @@
         <a routerLink="/folder/personal" routerLinkActive="active">Personal</a>
         <a routerLink="/folder/work" routerLinkActive="active">Work</a>
     </nav>
-    <input #title type="text">
-    <button (click)="addFolder(title.value)">+</button>
+    <button class="openModal" (click)="openModal()">+</button>
 </div>
-
+<div class="modal" *ngIf="isModalOpen" (click)="closeModal($event)">
+    <div class="modalContent">
+        <button class="close" (click)="closeModal()">X</button>
+        <input #title type="text">
+        <button class="submit" (click)="addFolder(title.value)">+</button>
+    </div>
+</div>

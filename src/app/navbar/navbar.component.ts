@@ -1,16 +1,18 @@
 import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 
   @ViewChild('navbar') navbar!: ElementRef;
+  isModalOpen = false;
   
   constructor(private renderer: Renderer2,
               private router: Router
@@ -36,5 +38,16 @@ export class NavbarComponent {
     const navbarElement = this.navbar.nativeElement;
     this.renderer.appendChild(navbarElement, folder);
 
+    this.closeModal();
+  }
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal(event?: MouseEvent) {
+    if(!event || event.target === event.currentTarget) {
+      this.isModalOpen = false;
+    }
   }
 }
