@@ -1,5 +1,59 @@
+.main {
+    padding: 10px;
+}
+
+.subMain {
+    display: flex;
+}
+
 .listContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+
+.inputModal {
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: center;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modalContent {
+    background-color: #fefefe;
+    padding: 20px;
+    width: 50%;
+    max-width: 500px;
+    height: 200px;
+    border: 1px solid #888;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.close {
+    width: 30px;
+    margin-left: auto;
+}
+
+.submitBtn {
+    display: block;
+    margin: auto;
+    width: 30%;
 }

@@ -36,6 +36,11 @@ export class TodoService {
     return this.lists.find((list) => list.name === listName);
   }
 
+  getAllStarredList(): ToDoList[] {
+    const starredLists = this.lists.filter(list => list.starred === true);
+    return starredLists
+  }
+
   addList(id: string, name: string): void {
     const newList: ToDoList = {
       id: id,

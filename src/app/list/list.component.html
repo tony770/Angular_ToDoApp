@@ -2,7 +2,7 @@
     <div class="list">
         <div class="buttonContainer">
             <button (click)="delete.emit(list.name)">Delete</button>
-            <button (click)="toggleStarred(list.name)">Star</button>
+            <button (click)="star.emit(list.name)">Star</button>
         </div>
         <h2 class="listName">{{ list.name }}</h2>
         <div class="taskContainer">

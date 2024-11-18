@@ -13,6 +13,7 @@ import { TodoService } from '../todo.service';
 export class ListComponent {
   @Input() list: ToDoList = {} as ToDoList;
   @Output() delete = new EventEmitter<string>();
+  @Output() star = new EventEmitter<string>();
   
   constructor(private todoService: TodoService
   ) {}
@@ -29,8 +30,4 @@ export class ListComponent {
     this.todoService.deleteTask(listName, taskId);
   }
 
-  toggleStarred(listName: string): void {
-    this.todoService.toggleStarred(listName);
-    console.log(`list ${listName} starred`);
-  }
 }

@@ -1,9 +1,17 @@
-<div class="listContainer">
-    @for (list of lists; track list.name) {
-        <app-list [list]="list" (delete)="deleteList(list.name)"></app-list>
-    }
+<div class="main">
+    <div class="listContainer">
+        @for (list of lists; track list.name) {
+            <app-list [list]="list" (delete)="deleteList(list.name)" (star)="toggleStarred(list.name)"></app-list>
+        }
+    </div>
+    <button (click)="openModal()">Add new list</button>
+    <div class="inputModal" *ngIf="isModalOpen" (click)="closeModal($event)">
+        <div class="modalContent">
+            <button class="close" (click)="closeModal()">X</button>
+            <label>What name?
+                <input #name type="text" placeholder="Enter list name">
+            </label>
+            <button (click)="addList(name.value)" class="submitBtn">Add List</button>
+        </div>
+    </div>
 </div>
-
-<input #id type="text" placeholder="Enter list folder">
-<input #name type="text" placeholder="Enter list name">
-<button (click)="addList(id.value, name.value)">Add List</button>
